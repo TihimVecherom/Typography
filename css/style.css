@@ -217,32 +217,6 @@ h6 {
   z-index: 1;
 }
 
-.picture-slide-first::after {
-  position: absolute;
-  width: 100%;
-  min-height: 100%;
-  content: "";
-  left: 0;
-  bottom: 0;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(27, 69, 136, 0)), to(#1B4588)) !important;
-  background: -o-linear-gradient(top, rgba(27, 69, 136, 0) 0%, #1B4588 100%) !important;
-  background: linear-gradient(180deg, rgba(27, 69, 136, 0) 0%, #1B4588 100%) !important;
-  z-index: 2;
-}
-
-.img-first::after {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  content: "";
-  left: 0;
-  bottom: 0;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(27, 69, 136, 0)), to(#1B4588)) !important;
-  background: -o-linear-gradient(top, rgba(27, 69, 136, 0) 0%, #1B4588 100%) !important;
-  background: linear-gradient(180deg, rgba(27, 69, 136, 0) 0%, #1B4588 100%) !important;
-  z-index: 2;
-}
-
 .swiper-slide-first__container {
   min-height: 100%;
   display: -webkit-box;
@@ -4570,6 +4544,10 @@ input[type=search]::-webkit-search-results-decoration {
 }
 
 @media (max-width: 650px) {
+  .picture-slide-first-wrap {
+    position: relative;
+  }
+
   .swiper-slide-first {
     background: var(--blue-700, #1B4588);
     height: -webkit-max-content;
@@ -4618,6 +4596,32 @@ input[type=search]::-webkit-search-results-decoration {
       height: calc(16.25rem + 11.875 * (100vw - 23.4375rem) / 17.1875);
     }
 }
+
+  .picture-slide-first::after {
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+    content: "";
+    left: 0;
+    bottom: 0;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(27, 69, 136, 0)), to(#1B4588)) !important;
+    background: -o-linear-gradient(top, rgba(27, 69, 136, 0) 0%, #1B4588 100%) !important;
+    background: linear-gradient(180deg, rgba(27, 69, 136, 0) 0%, #1B4588 100%) !important;
+    z-index: 2;
+  }
+
+  .img-first::after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: "";
+    left: 0;
+    bottom: 0;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(27, 69, 136, 0)), to(#1B4588)) !important;
+    background: -o-linear-gradient(top, rgba(27, 69, 136, 0) 0%, #1B4588 100%) !important;
+    background: linear-gradient(180deg, rgba(27, 69, 136, 0) 0%, #1B4588 100%) !important;
+    z-index: 2;
+  }
 
   .swiper-slide-first__btns {
     margin-top: 16px;
