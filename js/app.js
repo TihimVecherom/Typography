@@ -3544,7 +3544,7 @@
         });
     }
     function initSliders() {
-        if (document.querySelector(".swiper-first")) {
+        if (document.querySelector(".swiper")) {
             new core(".swiper-first", {
                 modules: [ Navigation, Pagination ],
                 observer: true,
@@ -3624,6 +3624,28 @@
                     1268: {}
                 },
                 on: {}
+            });
+            new core(".swiper-clients", {
+                modules: [ Navigation, Pagination ],
+                observer: true,
+                observeParents: true,
+                slidesPerView: "auto",
+                spaceBetween: 67,
+                autoHeight: true,
+                speed: 800,
+                navigation: {
+                    prevEl: ".clients-btn-prev",
+                    nextEl: ".clients-btn-next"
+                },
+                breakpoints: {
+                    320: {
+                        spaceBetween: 45
+                    },
+                    992: {
+                        spaceBetween: 67
+                    },
+                    1268: {}
+                }
             });
         }
     }
