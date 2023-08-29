@@ -3647,6 +3647,19 @@
                     1268: {}
                 }
             });
+            new core(".reviews-swiper", {
+                modules: [ Navigation, Pagination ],
+                observer: true,
+                observeParents: true,
+                slidesPerView: "auto",
+                spaceBetween: 40,
+                autoHeight: true,
+                speed: 800,
+                navigation: {
+                    prevEl: ".reviews-btn-prev",
+                    nextEl: ".reviews-btn-next"
+                }
+            });
         }
     }
     window.addEventListener("load", (function(e) {
@@ -3850,6 +3863,23 @@
     const blockElement = document.querySelector("header");
     const contentHeight = blockElement.scrollHeight;
     document.documentElement.style.setProperty("--block-height", contentHeight + "px");
+    function updateBlockClass(event) {
+        var inputValue = event.target.value;
+        var block = event.target.nextElementSibling;
+        if (inputValue.trim().length < 6) event.target.classList.add("error-input"); else event.target.classList.remove("error-input");
+        if ("" !== inputValue.trim()) {
+            event.target.classList.add("active-input");
+            block.classList.add("active-placeholder");
+        } else {
+            event.target.classList.remove("active-input");
+            block.classList.remove("active-placeholder");
+            event.target.classList.remove("error-input");
+        }
+    }
+    var inputElements = document.querySelectorAll(".input-footer");
+    inputElements.forEach((function(inputElement) {
+        inputElement.addEventListener("input", updateBlockClass);
+    }));
     window["FLS"] = true;
     isWebp();
     spollers();
