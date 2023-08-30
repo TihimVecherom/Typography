@@ -3653,11 +3653,34 @@
                 observeParents: true,
                 slidesPerView: "auto",
                 spaceBetween: 40,
-                autoHeight: true,
                 speed: 800,
                 navigation: {
                     prevEl: ".reviews-btn-prev",
                     nextEl: ".reviews-btn-next"
+                }
+            });
+            new core(".practice-cases-swiper", {
+                modules: [ Navigation, Pagination ],
+                observer: true,
+                observeParents: true,
+                slidesPerView: "auto",
+                spaceBetween: 40,
+                speed: 800,
+                navigation: {
+                    prevEl: ".practice-cases-btn-prev",
+                    nextEl: ".practice-cases-btn-next"
+                }
+            });
+            new core(".specialists-swiper", {
+                modules: [ Navigation, Pagination ],
+                observer: true,
+                observeParents: true,
+                slidesPerView: "auto",
+                spaceBetween: 24,
+                speed: 800,
+                navigation: {
+                    prevEl: ".specialists-btn-prev",
+                    nextEl: ".specialists-btn-next"
                 }
             });
         }
@@ -3879,6 +3902,16 @@
     var inputElements = document.querySelectorAll(".input-footer");
     inputElements.forEach((function(inputElement) {
         inputElement.addEventListener("input", updateBlockClass);
+    }));
+    const btnEmail = document.querySelector(".button-email");
+    if (btnEmail) btnEmail.addEventListener("click", (function(e) {
+        btnEmail.classList.toggle("active");
+        inputElements.forEach((function(inputElement) {
+            inputElement.classList.remove("active-input");
+        }));
+        inputElements.forEach((function(inputElement) {
+            if (btnEmail.classList.contains("active")) inputElement.classList.add("input-success"); else inputElement.classList.remove("input-success");
+        }));
     }));
     window["FLS"] = true;
     isWebp();
