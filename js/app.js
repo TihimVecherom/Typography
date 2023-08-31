@@ -3913,6 +3913,39 @@
             if (btnEmail.classList.contains("active")) inputElement.classList.add("input-success"); else inputElement.classList.remove("input-success");
         }));
     }));
+    const menuLinks = document.querySelectorAll(".examination__nav-page-wrap ul li a");
+    const headerHeight = 70;
+    const scrollThreshold = 50;
+    function updateActiveLink() {
+        if (window.innerWidth <= 767.98) menuLinks.forEach((link => {
+            const targetId = link.getAttribute("href").substring(1);
+            const targetBlock = document.getElementById(targetId);
+            const blockTop = targetBlock.getBoundingClientRect().top - headerHeight;
+            const blockBottom = targetBlock.getBoundingClientRect().bottom - headerHeight;
+            if (blockTop <= scrollThreshold && blockBottom > scrollThreshold) {
+                menuLinks.forEach((link => link.classList.remove("active")));
+                link.classList.add("active");
+            } else link.classList.remove("active");
+        })); else menuLinks.forEach((link => link.classList.remove("active")));
+    }
+    menuLinks.forEach((link => {
+        link.addEventListener("click", (event => {
+            event.preventDefault();
+            const targetId = link.getAttribute("href").substring(1);
+            const targetBlock = document.getElementById(targetId);
+            if (targetBlock) {
+                const blockTop = targetBlock.offsetTop - headerHeight;
+                window.scrollTo({
+                    top: blockTop,
+                    behavior: "smooth"
+                });
+                menuLinks.forEach((link => link.classList.remove("active")));
+                link.classList.add("active");
+            }
+        }));
+    }));
+    window.addEventListener("scroll", updateActiveLink);
+    updateActiveLink();
     window["FLS"] = true;
     isWebp();
     spollers();
