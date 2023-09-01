@@ -4239,6 +4239,10 @@ a:active svg path {
   background: var(--grey-50, #F8F9FA);
 }
 
+.examination {
+  background: var(--grey-50, #F8F9FA);
+}
+
 @supports (padding-bottom: clamp( 6.5rem , 5.7077464789rem  +  3.3802816901vw , 8.75rem )) {
   .examination {
     padding-bottom: clamp( 6.5rem , 5.7077464789rem  +  3.3802816901vw , 8.75rem );
