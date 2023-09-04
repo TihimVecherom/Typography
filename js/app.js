@@ -4346,6 +4346,12 @@
         }));
         window.addEventListener("scroll", updateActiveLink);
         updateActiveLink();
+        var liElements = document.querySelectorAll(".filter-item-style li");
+        liElements.forEach((function(element) {
+            element.addEventListener("click", (function() {
+                element.classList.toggle("active");
+            }));
+        }));
         var aos = __webpack_require__(711);
         window["FLS"] = true;
         isWebp();
