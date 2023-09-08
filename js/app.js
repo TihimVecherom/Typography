@@ -4288,6 +4288,28 @@
                         nextEl: ".reviews-btn-next"
                     }
                 });
+                new core(".swiper-clients-reviews", {
+                    modules: [ Navigation, Pagination ],
+                    observer: true,
+                    observeParents: true,
+                    slidesPerView: "auto",
+                    spaceBetween: 40,
+                    speed: 800,
+                    navigation: {
+                        prevEl: ".reviews-btn-prev",
+                        nextEl: ".reviews-btn-next"
+                    },
+                    breakpoints: {
+                        320: {
+                            spaceBetween: 40,
+                            slidesPerView: 1
+                        },
+                        374: {
+                            slidesPerView: "auto"
+                        },
+                        1268: {}
+                    }
+                });
                 new core(".practice-cases-swiper", {
                     modules: [ Navigation, Pagination ],
                     observer: true,
