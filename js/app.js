@@ -4553,7 +4553,7 @@
             block.addEventListener("mouseover", addClassToPreviousBlock);
             block.addEventListener("mouseout", removeClassFromPreviousBlock);
         }));
-        const btnSubMenuMb = document.querySelector(".btn-sub-menu");
+        const btnSubMenuMb = document.querySelector(".menu-item-has-children > a");
         const subMenuMb = document.querySelector(".sub-menu-wrap");
         if (btnSubMenuMb && window.innerWidth < 991.98) btnSubMenuMb.addEventListener("click", (function(e) {
             btnSubMenuMb.classList.toggle("active");
