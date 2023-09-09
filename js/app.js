@@ -4538,7 +4538,7 @@
                 searchOnInput.classList.remove("active");
             }));
         }
-        const blocks = document.querySelectorAll(".sub-menu-dropdown-wrap");
+        const blocks = document.querySelectorAll(".menu-item .sub-menu-wrap");
         function addClassToPreviousBlock(event) {
             const currentBlock = event.currentTarget;
             const previousBlock = currentBlock.previousElementSibling;
@@ -4555,10 +4555,11 @@
         }));
         const btnSubMenuMb = document.querySelector(".menu-item-has-children > a");
         const subMenuMb = document.querySelector(".sub-menu-wrap");
-        if (btnSubMenuMb && window.innerWidth < 991.98) btnSubMenuMb.addEventListener("click", (function(e) {
+        if (window.innerWidth < 991) btnSubMenuMb.addEventListener("click", (function(e) {
             btnSubMenuMb.classList.toggle("active");
             if (subMenuMb) subMenuMb.classList.toggle("active");
         }));
+        console.log(btnSubMenuMb);
         const btnPractices = document.querySelectorAll(".practice__item-title");
         const textPractices = document.querySelectorAll(".practice__item-text");
         btnPractices.forEach(((btnPractice, index) => {
