@@ -4559,7 +4559,6 @@
             btnSubMenuMb.classList.toggle("active");
             if (subMenuMb) subMenuMb.classList.toggle("active");
         }));
-        console.log(btnSubMenuMb);
         const btnPractices = document.querySelectorAll(".practice__item-title");
         const textPractices = document.querySelectorAll(".practice__item-text");
         btnPractices.forEach(((btnPractice, index) => {
@@ -4654,6 +4653,23 @@
             tabContents[0].style.display = "block";
             tabButtonWrappers[0].querySelector(".history-btn-tab").classList.add("active-tab-btn");
         }
+        const btnsSubMenuMb2lv = document.querySelectorAll(".sub-menu-wrap .sub-menu .menu-item > a");
+        const subMenusMb2lv = document.querySelectorAll(".sub-menu-wrap .sub-menu .menu-item > a ~ .sub-menu-wrap ");
+        if (window.innerWidth < 991) btnsSubMenuMb2lv.forEach(((btnSubMenuMb2lv, index) => {
+            btnSubMenuMb2lv.addEventListener("click", (function(e) {
+                const isActive = subMenusMb2lv[index].classList.contains("active");
+                subMenusMb2lv.forEach((subMenu => {
+                    subMenu.classList.remove("active");
+                }));
+                btnsSubMenuMb2lv.forEach((btn => {
+                    btn.classList.remove("active");
+                }));
+                if (!isActive) {
+                    subMenusMb2lv[index].classList.add("active");
+                    btnSubMenuMb2lv.classList.add("active");
+                }
+            }));
+        }));
         var aos = __webpack_require__(711);
         window["FLS"] = true;
         isWebp();
