@@ -8705,6 +8705,11 @@ p.red {
   padding: 60px;
   background: var(--grey-100, #F1F3F5);
   max-width: 488px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: none;
 }
 
 .modalq-title {
@@ -8752,6 +8757,30 @@ p.red {
   height: 55px;
 }
 
+.form-popups input::-webkit-input-placeholder {
+  opacity: 0;
+}
+
+.form-popups input::-moz-placeholder {
+  opacity: 0;
+}
+
+.form-popups input:-ms-input-placeholder {
+  opacity: 0;
+}
+
+.form-popups input::-ms-input-placeholder {
+  opacity: 0;
+}
+
+.form-popups input::placeholder {
+  opacity: 0;
+}
+
+.form-popups .input-footer.active-input {
+  padding-bottom: 0px;
+}
+
 .form-popups label {
   min-width: 100%;
   max-width: 100%;
@@ -8763,6 +8792,14 @@ p.red {
 
 .form-popups .placeholder-span {
   color: var(--grey-600, #868E96);
+}
+
+.form-popups .input-footer.active-input ~ .placeholder-span {
+  top: 20px;
+}
+
+.form-popups .input-footer:focus ~ .placeholder-span {
+  top: 20px;
 }
 
 .form-popups input:hover {
